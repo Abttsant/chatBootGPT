@@ -1,34 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/logo-zonia.ico"
+      type="image/x-icon"
+    />
+    <title>ZonIA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="chat-container">
-        <div class="chat-header">
-            <h3>ZonIA, chatBoot do GPT</h3>
+      <div class="chat-header">
+        <img style="height: 2rem" src="/assets/logo-zonia.ico" alt="" />
+        <h3>onIA, chatBoot</h3>
+      </div>
+      <div id="loading"><span>.</span><span>.</span><span>.</span></div>
+      <div class="chat-messages" id="chatMessages">
+        <div id="historic" class="message received"></div>
+      </div>
+      <form id="form" action="#">
+        <input
+          type="password"
+          id="apiKey"
+          name="password"
+          placeholder="Cole aqui sua chave da API"
+        />
+        <div id="input-row">
+          <textarea
+            id="messageInput"
+            placeholder="Converse com o ZonIA"
+          ></textarea>
+          <button type="submit" id="sendButton">
+            <i class="bi bi-send-fill"></i>
+          </button>
         </div>
-        <p id="status"></p>
-        <div class="chat-messages" id="chatMessages">
-            <div id="historic" class="message received">
-                
-                <!-- inserir texto -->
-            </div>           
-        </div>
-        <div class="chat-input">
-            <form id="form" action="">
-                <label for="apiKey"></label>
-                <input type="password" id="apiKey" placeholder="Cole aqui sua chave da API" required>
-                <br>
-                <input type="text" id="messageInput" placeholder="Converse com o ZonIA...">
-                <button id="sendButton">Enviar</i></button>
-            </form>
-        </div>
-        </div>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
