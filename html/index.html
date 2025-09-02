@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/assets/logo-zonia.ico"
+      type="image/x-icon"
+    />
+    <title>ZonIA | Assistente de IA</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="about.html"
+        ><img src="/assets/logo-zonia.svg" alt="" id="img-logo-zonia"
+      /></a>
+    </header>
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Zonia</h2>
+      </div>
+      <div id="loading"><span>.</span><span>.</span><span>.</span></div>
+      <div class="chat-messages" id="chatMessages">
+        <div id="historic" class="message received"></div>
+      </div>
+      <form id="form" action="#">
+        <div id="input">
+          <input
+            type="password"
+            id="apiKey"
+            name="password"
+            class="element-input"
+            placeholder="Cole aqui sua chave da API"
+          />
+          <select id="model" class="element-input">
+            <option value="gpt-4.1">GPT-4.1</option>
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-4o-mini">GPT-4o-mini</option>
+            <option value="gpt-3.5-turbo">GPT-3.5-turbo</option>
+          </select>
+          <button id="cleanButton" class="element-input">Limpar</button>
+        </div>
+        <div id="input-row">
+          <div
+            id="messageInput"
+            contenteditable="true"
+            data-placeholder="Conversar..."
+          ></div>
+
+          <span id="characterCount"></span>
+          <button type="submit" id="sendButton">
+            <i class="bi bi-send-fill"></i>
+          </button>
+
+          <div>
+            <dialog id="modalClean">
+              <h2>Apagar mensagens?</h2>
+              <p>Toda conversa será apagada.</p>
+              <button id="clean" class="buttonModal">Sim</button>
+              <button id="close" class="buttonModal">Não</button>
+            </dialog>
+          </div>
+        </div>
+        <p id="footer-index">
+          Respostas de IA podem ser imprecisas. Verifique informações
+          importantes.
+        </p>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>

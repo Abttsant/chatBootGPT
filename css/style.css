@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e2e0ff;
+  background-image: url('/assets/blue-white-gradient.png');
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#img-logo-zonia {
+  margin: 0.5rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: auto;
+}
+
+#text-center {
+  text-align: center;
+  padding: 3rem;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+#text-p {
+  font-size: 1.5rem;
+  padding: 0 20rem;
+  margin-bottom: 3rem;
+}
+
+.bi-chat {
+  padding-right: 0.2rem;
+}
+.button-about-a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #5c55ad;
+}
+
+.button-about {
+  background-color: #f1f0ff;
+  padding: 0.8rem;
+  border: 2px solid #5c55ad;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 2rem;
+}
+.button-about:hover {
+  box-shadow: 0 0 15px #5c55ad;
+  text-shadow: 0 0 15px #5c55ad;
+}
+.chat-container {
+  width: 70%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 10rem;
+  border-radius: 30px;
+  box-shadow: 0 0.2rem 1.5rem #c1bfec;
+}
+
+.animated-text {
+  justify-content: center;
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  color: #5c55ad;
+}
+
+.animated-text span {
+  margin-left: 0.2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  position: relative;
+}
+.animated-text span::before {
+  content: '';
+  animation: words 20s infinite;
+}
+.animated-text span::after {
+  content: '';
+  position: absolute;
+  height: 80%;
+  border-left: 4px solid #5c55ad;
+  right: -5px;
+  animation: cursor 0.8s infinite, write 25s steps(15, end) infinite;
+  width: calc(100% + 10px);
+  background-color: #e2e0ff;
+}
+@keyframes write {
+  10%,
+  15%,
+  30%,
+  35%,
+  50%,
+  55%,
+  70%,
+  75%,
+  90%,
+  95% {
+    width: 0;
+  }
+  5%,
+  20%,
+  25%,
+  40%,
+  45%,
+  60%,
+  65%,
+  80%,
+  85% {
+    width: calc(100% + 10px);
+  }
+}
+
+@keyframes cursor {
+  0% {
+    border-left: 2px solid #e2e0ff;
+  }
+}
+
+@keyframes words {
+  0%,
+  25% {
+    content: 'conversa';
+  }
+  26%,
+  50% {
+    content: 'explora';
+  }
+  51%,
+  75% {
+    content: 'aprende';
+  }
+  76%,
+  100% {
+    content: 'conectado!';
+  }
+}
+
+@media (max-width: 1000px) {
+  #img-logo-zonia {
+    margin: 0.3rem 0.5rem;
+  }
+  #text-center {
+    padding: 2rem;
+    overflow: hidden;
+  }
+  #text-p {
+    padding: 0;
+  }
+  #img-logo-zonia {
+    height: 3rem;
+  }
+  .animated-text {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  footer {
+    padding: 0 1rem;
+    line-height: 1.3;
+  }
+  .chat-container {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0px;
+  }
+  h2 {
+    color: transparent;
+  }
+}
+@media (max-width: 700px) {
+  #apiKey {
+    width: 50%;
+  }
+  #model {
+    width: 50%;
+  }
+}
+.logo-footer {
+  height: 1.3rem;
+  margin-bottom: -0.3rem;
+}
+
+footer {
+  color: #333;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0.6rem;
+  text-align: center;
+}
+#footer-index {
+  color: #111;
+  text-align: center;
+  padding-top: 0.5rem;
+  line-height: 1;
+}
+
+#loading {
+  display: none;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  font-weight: 900;
+}
+#loading span {
+  animation: blink 1.5s infinite;
+}
+
+#loading span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+#loading span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.chat-header {
+  color: #333;
+  border-bottom: 2px solid #cac7f7;
+  padding: 0.6rem 2rem;
+}
+
+.chat-header h3 {
+  font-size: 1.5em;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 0.2rem;
+  overflow-y: auto;
+}
+#loading {
+  text-align: center;
+  background-color: transparent;
+}
+
+.message {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  word-wrap: break-word;
+}
+.message img {
+  width: 60px;
+  max-height: 60px;
+  border-radius: 50px;
+}
+.message {
+  margin: 0;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.message.received {
+  align-self: flex-start;
+}
+
+#form {
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+#input-row,
+#apiKey,
+#model,
+#cleanButton {
+  font-size: 1rem;
+  outline: none;
+  border-radius: 30px;
+  background-color: #f1f0ff;
+  border: none;
+  font-size: 1.2rem;
+}
+#input-row:hover,
+#apiKey:hover,
+#model:hover,
+#cleanButton:hover {
+  box-shadow: 0 0 15px #5c55ad;
+}
+.element-input {
+  padding: 0.3rem 0rem 0.3rem 0.8rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.3rem;
+}
+#input {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+#input-row {
+  position: relative;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  align-items: end;
+}
+
+#characterCount {
+  position: absolute;
+  padding-right: 3rem;
+  right: 3rem;
+  font-size: 1rem;
+  color: #333;
+}
+#messageInput {
+  position: relative; /* Devido ao placeholder*/
+  outline: none;
+  flex: 1;
+  margin: 0rem 1rem;
+  padding: 0 0 1rem 0;
+  border: none;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+#messageInput:before {
+  content: attr(data-placeholder);
+  color: #777;
+  position: absolute; /* Devido ao placeholder*/
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.1s;
+}
+#messageInput.not-empty::before {
+  opacity: 0;
+}
+#cleanButton {
+  flex-basis: 25%;
+  padding: 0 2rem;
+  cursor: pointer;
+}
+#model {
+  flex-basis: 25%;
+  cursor: pointer;
+}
+#apiKey {
+  flex-basis: 50%;
+}
+
+#sendButton {
+  background-color: #6f6bc0;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#sendButton:focus,
+#sendButton:hover {
+  transform: scale(1.03);
+}
+.bi-send-fill {
+  font-size: 1.5rem;
+  color: #f1f0ff;
+  display: inline-block;
+  transform: rotate(45deg);
+}
+
+#historic {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1px;
+  height: 100%;
+  overflow-y: auto;
+}
+.box-my-message {
+  display: flex;
+  justify-content: flex-end;
+  white-space: pre-wrap;
+}
+.box-response-message {
+  display: flex;
+  justify-content: flex-start;
+}
+.my-message {
+  color: #333;
+  padding: 1rem;
+  border-radius: 20px;
+  border-top-right-radius: 2px;
+}
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  padding: 0.5rem 1rem 0.2rem 1rem;
+  border-radius: 20px;
+  background-color: #6f6bc0;
+  border-top-left-radius: 2px;
+}
+
+.copy-button {
+  cursor: pointer;
+  padding: 0.2rem 0.2rem;
+}
+
+.copy-button {
+  transition: color 0.3s, transform 0.3s;
+}
+
+#modalClean {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #c1bfec;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  position: fixed;
+  top: 20%;
+  left: 45%;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #5c55ad;
+}
+
+.buttonModal {
+  width: 3rem;
+  border-radius: 5px;
+  border: none;
+  height: 1.3rem;
+  font-size: 1rem;
+  margin: 0.5rem;
+  background-color: #8682d1;
+  color: #fff;
+  padding-bottom: 1.5rem;
+  /* box-shadow: 0 0 15px #5c55ad; */
+}
+.buttonModal:hover {
+  background-color: #aaa7eb;
+  cursor: pointer;
+}
